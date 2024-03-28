@@ -7,6 +7,108 @@
  * @authorId 308023735397515265
 */
 
+/* removing default markdown */
+
+.messageContent_abea64 strong, .bold__7430c { font-weight: normal; } /* remove default bold */
+.messageContent_abea64 em, .italics_b5be51 { font-style: normal; } /* remove default italic */
+.messageContent_abea64 s, .strikethrough_d0f036 { text-decoration-line: none; } /* remove default strikethrough */
+.messageContent_abea64 u, .underline_b218b4 { text-decoration-line: none; } /* remove default underlined */
+
+
+
+/* Determination, syntax: " **text** " */
+
+.messageContent_abea64 > strong:has(>span),
+span[class="bold__7430c"] {
+    font-weight: bold;
+    color: red;
+    text-shadow: 0px 0px 5px red,  0px 0px 5px red;
+}
+
+
+
+/* Bravery, syntax: " **_text_** " */
+
+.messageContent_abea64 > strong > em:has(>span),
+span[class="bold__7430c italics_b5be51"] {
+    font-weight: bold;
+    color: orange;
+    text-shadow: 0px 0px 5px orange,  0px 0px 5px orange;
+}
+
+
+
+/* Justice, syntax: " ~~text~~ " */
+
+.messageContent_abea64 > s:has(>span),
+span[class="strikethrough_d0f036"] {
+    font-weight: bold;
+    color: yellow;
+    text-shadow: 0px 0px 5px yellow,  0px 0px 5px yellow;
+}
+
+
+
+/* Kindness, syntax: " *text* " */
+
+.messageContent_abea64 > em:has(>span),
+span[class="italics_b5be51"] {
+    font-weight: bold;
+    color: lime;
+    text-shadow: 0px 0px 5px lime,  0px 0px 5px lime;
+}
+
+
+
+/* Patience, syntax: " __text__ " */
+
+.messageContent_abea64 > u:has(>span), 
+span[class="underline_b218b4"] {
+    font-weight: bold;
+    color: cyan;
+    text-shadow: 0px 0px 5px cyan,  0px 0px 5px cyan ;
+}
+
+
+
+/* Integrity, syntax: " ~~**text**~~ " */
+
+.messageContent_abea64 > s > strong:has(>span),
+span[class="strikethrough_d0f036 bold__7430c"] {
+    font-weight: bold;
+    color: blue;
+    text-shadow: 0px 0px 5px blue,  0px 0px 5px blue;
+}
+
+
+
+/* Perseverance, syntax: " _**text**_ " */
+
+.messageContent_abea64 > em > strong:has(>span), 
+span[class="italics_b5be51 bold__7430c"] {
+    font-weight: bold;
+    color: darkmagenta;
+    text-shadow: 0px 0px 5px darkmagenta,  0px 0px 5px darkmagenta;
+}
+
+
+
+/* Trans, syntax: " **~~text~~** " */
+
+.messageContent_abea64 > strong > s:has(>span),
+span[class="bold__7430c strikethrough_d0f036"] {
+    --trans-grad: linear-gradient(90deg, #5BCEFA, #F5A9B8, #FFFFFF, #F5A9B8, #5BCEFA);
+    font-weight: bold;
+    background: var(--trans-grad);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+
+/* Rainbow, syntax: " **__text__** " */
+
 @property --hue {
     syntax: '<number>';
     initial-value: 0;
@@ -18,84 +120,32 @@
     to { --hue: 360; }
 }
 
-.messageContent__21e69 strong, .bold__7430c { font-weight: normal; } /* remove default bold */
-.messageContent__21e69 em, .italics_b5be51 { font-style: normal; } /* remove default italic */
-.messageContent__21e69 s, .strikethrough_d0f036 { text-decoration-line: none; } /* remove default strikethrough */
-.messageContent__21e69 u, .underline_b218b4 { text-decoration-line: none; } /* remove default underlined */
-
-
-.messageContent__21e69 > strong:has(>span),
-span[class="bold__7430c"]
-{ /* Determination, syntax: " **text** " */
-    font-weight: bold;
-    color: red;
-    text-shadow: 0px 0px 5px red,  0px 0px 5px red;
-}
-
-.messageContent__21e69 > strong > em:has(>span),
-span[class="bold__7430c italics_b5be51"]
-{ /* Bravery, syntax: " **_text_** " */
-    font-weight: bold;
-    color: orange;
-    text-shadow: 0px 0px 5px orange,  0px 0px 5px orange;
-}
-
-.messageContent__21e69 > s:has(>span),
-span[class="strikethrough_d0f036"] 
-{ /* Justice, syntax: " ~~text~~ " */
-    font-weight: bold;
-    color: yellow;
-    text-shadow: 0px 0px 5px yellow,  0px 0px 5px yellow;
-}
-
-.messageContent__21e69 > em:has(>span),
-span[class="italics_b5be51"]
-{ /* Kindness, syntax: " *text* " */
-    font-weight: bold;
-    color: lime;
-    text-shadow: 0px 0px 5px lime,  0px 0px 5px lime;
-}
-
-.messageContent__21e69 > u:has(>span), 
-span[class="underline_b218b4"] 
-{ /* Patience, syntax: " __text__ " */
-    font-weight: bold;
-    color: cyan;
-    text-shadow: 0px 0px 5px cyan,  0px 0px 5px cyan ;
-}
-
-.messageContent__21e69 > s > strong:has(>span),
-span[class="strikethrough_d0f036 bold__7430c"] 
-{ /* Integrity, syntax: " ~~**text**~~ " */
-    font-weight: bold;
-    color: blue;
-    text-shadow: 0px 0px 5px blue,  0px 0px 5px blue;
-}
-
-.messageContent__21e69 > em > strong:has(>span), 
-span[class="italics_b5be51 bold__7430c"] 
-{ /* Perseverance, syntax: " _**text**_ " */
-    font-weight: bold;
-    color: darkmagenta;
-    text-shadow: 0px 0px 5px darkmagenta,  0px 0px 5px darkmagenta;
-}
-
-.messageContent__21e69 > strong > s:has(>span),
-span[class="bold__7430c strikethrough_d0f036"] 
-{ /* trans text, syntax: " **~~text~~** " */
-    --trans-grad: linear-gradient(90deg, #5BCEFA, #F5A9B8, #FFFFFF, #F5A9B8, #5BCEFA);
-    font-weight: bold;
-    background: var(--trans-grad);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.messageContent__21e69 > strong > u:has(>span),
-span[class="bold__7430c underline_b218b4"] 
-{ /* rainbow text, syntax: " **__text__** " */
+.messageContent_abea64 > strong > u:has(>span),
+span[class="bold__7430c underline_b218b4"] {
     font-weight: bold;
     color: hsl(var(--hue),100%,50%);
     text-shadow: 0px 0px 5px hsl(var(--hue),100%,50%), 0px 0px 5px hsl(var(--hue),100%,50%);
     animation: hue-rotate 1s infinite linear;
+}
+
+
+
+/* Spin, syntax: " ~~*text*~~ " */
+
+@keyframes spin {
+    from {
+        transform: perspective(400px) rotate3d(0, 1, 0, 0deg);
+    }
+    to {
+        transform: perspective(400px) rotate3d(0, 1, 0, 360deg);
+    }
+}
+
+.messageContent_abea64 > em > s:has(>span) { 
+    display: inline-block;
+    animation: spin 1s infinite linear;
+}
+
+.messageContent_abea64 > em > s:has(>span):hover {
+    animation: none;
 }
